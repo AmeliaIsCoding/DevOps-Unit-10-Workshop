@@ -34,6 +34,8 @@ def process_orders(app):
             json=payload
         )
 
+        app.logger.info("Request to endpoint with date: " + order.date_placed.isoformat())
+
         app.logger.info("Response from endpoint: " + response.text)
 
         response.raise_for_status()
